@@ -210,19 +210,19 @@ protected
       Modelica.Math.Vectors.interpolate(
       pressureCurve_default.V_flow,
       pressureCurve_default.dp,
-      Vi) for Vi in V_flow_min:(V_flow_max - V_flow_min)/n_sup_pts:V_flow_max)
+      Vi) for Vi in V_flow_min:(V_flow_max - V_flow_min)/n_sup_pts:V_flow_max + (V_flow_max - V_flow_min)/n_sup_pts/2)
     "Vector (equally spaced) with pressure heads (default curve) on the basis of n_sup_pts supporting points";
   final parameter Modelica.Units.SI.PressureDifference dps_dpConst[:]=array(
       Modelica.Math.Vectors.interpolate(
       pressureCurve_dpConst.V_flow,
       pressureCurve_dpConst.dp,
-      Vi) for Vi in V_flow_min:(V_flow_max - V_flow_min)/n_sup_pts:V_flow_max)
+      Vi) for Vi in V_flow_min:(V_flow_max - V_flow_min)/n_sup_pts:V_flow_max + (V_flow_max - V_flow_min)/n_sup_pts/2)
     "Vector (equally spaced) with pressure heads (dpConst curve) on the basis of n_sup_pts supporting points";
   final parameter Modelica.Units.SI.PressureDifference dps_dpVar[:]=array(
       Modelica.Math.Vectors.interpolate(
       pressureCurve_dpVar.V_flow,
       pressureCurve_dpVar.dp,
-      Vi) for Vi in V_flow_min:(V_flow_max - V_flow_min)/n_sup_pts:V_flow_max)
+      Vi) for Vi in V_flow_min:(V_flow_max - V_flow_min)/n_sup_pts:V_flow_max + (V_flow_max - V_flow_min)/n_sup_pts/2)
     "Vector (equally spaced) with pressure heads (dpVar curve) on the basis of n_sup_pts supporting points";
 
   function checkDpCurves
